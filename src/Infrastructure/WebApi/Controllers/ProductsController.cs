@@ -4,9 +4,9 @@ using Application.Products.Commands.DeleteProduct;
 using Application.Products.Commands.UpdateProduct;
 using Application.Products.Queries.GetAllProducts;
 using Application.Products.Queries.GetProductById;
-using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models;
 
 namespace WebApi.Controllers;
 
@@ -65,11 +65,3 @@ public class ProductsController : ControllerBase
         return NoContent();
     }
 }
-
-public record UpdateProductRequest(
-    string Name,
-    string Description,
-    decimal Price,
-    int StockQuantity,
-    ProductStatus Status
-);
